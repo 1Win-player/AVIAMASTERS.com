@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+    <meta name="theme-color" content="#121212" />
+    <title>Бонус за регистрацию</title>
+    <style>
+      :root {
+        --primary-color: #4caf50;
+        --secondary-color: #ff6b00;
+        --text-color: #ffffff;
+        --bg-dark: rgba(20, 20, 20, 0.9);
+        --online-counter: #ffeb3b;
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          Oxygen, Ubuntu, Cantarell, "Open Sans", sans-serif;
+        line-height: 1.5;
+        color: var(--text-color);
+        background: linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.85)),
+          url("гп.jpg") no-repeat center center fixed;
+        background-size: cover;
+        min-height: 100vh;
+        padding: 20px;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+
+      .container {
+        max-width: 600px;
+        margin: 0 auto;
+        background-color: var(--bg-dark);
+        border-radius: 12px;
+        padding: clamp(15px, 3vw, 25px);
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(8px);
+      }
+
+      .promo-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+        background: linear-gradient(
+          135deg,
+          rgba(255, 152, 0, 0.25),
+          rgba(255, 87, 34, 0.25)
+        );
+        padding: clamp(15px, 3vw, 20px);
+        border-radius: 12px;
+        margin-bottom: clamp(15px, 3vw, 25px);
+        border: 1px dashed #ff9800;
+      }
+
+      @media (min-width: 480px) {
+        .promo-container {
+          flex-direction: row;
+        }
+      }
+
+      .promo-text {
+        text-align: center;
+        font-weight: bold;
+        font-size: clamp(16px, 3vw, 20px);
+        line-height: 1.3;
+        flex: 1;
+      }
+
+      .promo-text strong {
+        color: var(--primary-color);
+        text-shadow: 0 0 10px rgba(76, 175, 80, 0.7);
+        font-size: clamp(18px, 4vw, 22px);
+        display: block;
+        margin-bottom: 5px;
+      }
+
+      .promo-image {
+        width: min(150px, 100%);
+        height: auto;
+        border-radius: 10px;
+        border: 2px solid rgba(255, 255, 255, 0.3);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      }
+
+      .game-image {
+        width: 100%;
+        border-radius: 10px;
+        margin-bottom: clamp(10px, 3vw, 20px);
+        border: 2px solid var(--secondary-color);
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+        aspect-ratio: 16/9;
+        object-fit: cover;
+      }
+
+      .game-title {
+        text-align: center;
+        font-weight: bold;
+        color: var(--primary-color);
+        font-size: clamp(18px, 4vw, 22px);
+        margin: clamp(5px, 2vw, 10px) 0;
+        text-shadow: 0 0 8px rgba(76, 175, 80, 0.6);
+      }
+
+      .btn {
+        display: block;
+        background: linear-gradient(to right, var(--secondary-color), #ff3d00);
+        color: white;
+        text-align: center;
+        padding: clamp(12px, 3vw, 16px);
+        border-radius: 10px;
+        text-decoration: none;
+        font-weight: bold;
+        margin: 0 auto clamp(10px, 3vw, 15px) auto;
+        width: min(90%, 400px);
+        font-size: clamp(16px, 4vw, 20px);
+        transition: all 0.3s ease;
+        box-shadow: 0 5px 15px rgba(255, 107, 0, 0.4);
+        border: none;
+        cursor: pointer;
+      }
+
+      .btn:hover,
+      .btn:focus {
+        background: linear-gradient(to right, #ff5e00, #ff2d00);
+        transform: translateY(-3px);
+        box-shadow: 0 8px 20px rgba(255, 107, 0, 0.5);
+      }
+
+      .btn:active {
+        transform: translateY(1px);
+      }
+
+      .online-counter {
+        text-align: center;
+        font-size: clamp(14px, 3vw, 18px);
+        margin-bottom: 10px;
+        color: var(--primary-color);
+        text-shadow: 0 0 8px rgba(76, 175, 80, 0.6);
+        font-weight: bold;
+      }
+
+      .online-number {
+        font-size: clamp(16px, 4vw, 22px);
+        color: var(--online-counter);
+        text-shadow: 0 0 10px rgba(255, 235, 59, 0.7);
+      }
+
+      /* Оптимизация для старых устройств */
+      @media not all and (min-resolution: 0.001dpcm) {
+        body {
+          background-attachment: scroll;
+        }
+        .container {
+          backdrop-filter: none;
+          background-color: rgba(20, 20, 20, 0.95);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="promo-container">
+        <img
+          src="кпп.png"
+          class="promo-image"
+          alt="AVIA MASTERS"
+          loading="lazy"
+        />
+        <div class="promo-text">
+          <strong>ВВОДИ ПРОМОКОД ECOSYSTEM!</strong>
+          ПРИ РЕГИСТРАЦИИ И ПОЛУЧИ +500% К ДЕПОЗИТУ
+        </div>
+      </div>
+
+      <div class="game-title">ИГРА: AVIAMASTERS</div>
+
+      <img
+        src="гп.jpg"
+        class="game-image"
+        alt="Aviamasters Game"
+        loading="lazy"
+      />
+
+      <a href="https://1wlvkt.life/?p=5rqs" class="btn">ИГРАТЬ СЕЙЧАС</a>
+
+      <div class="online-counter">
+        ОНЛАЙН ИГРОКОВ:
+        <span class="online-number" id="onlineCounter">5500</span>
+      </div>
+    </div>
+
+    <script>
+      // Оптимизированный скрипт для счетчика
+      document.addEventListener("DOMContentLoaded", function () {
+        const counter = document.getElementById("onlineCounter");
+
+        // Функция для форматирования числа
+        function formatNumber(num) {
+          return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+        }
+
+        // Генерация случайного числа с плавной анимацией
+        function updateCounter() {
+          const current = parseInt(counter.textContent.replace(/\s/g, ""));
+          const target = Math.floor(Math.random() * 1001) + 5000;
+          const duration = 1000; // 1 секунда
+          const startTime = performance.now();
+
+          function animate(currentTime) {
+            const elapsed = currentTime - startTime;
+            const progress = Math.min(elapsed / duration, 1);
+            const value = Math.floor(current + (target - current) * progress);
+
+            counter.textContent = formatNumber(value);
+
+            if (progress < 1) {
+              requestAnimationFrame(animate);
+            }
+          }
+
+          requestAnimationFrame(animate);
+
+          // Следующее обновление через 5-7 секунд
+          setTimeout(updateCounter, 5000 + Math.random() * 2000);
+        }
+
+        // Инициализация
+        counter.textContent = formatNumber(
+          Math.floor(Math.random() * 1001) + 5000
+        );
+        setTimeout(updateCounter, 5000);
+
+        // Оптимизация для мобильных устройств
+        if ("ontouchstart" in window) {
+          document.querySelector(".btn").style.transform = "none";
+        }
+      });
+    </script>
+  </body>
+</html>
